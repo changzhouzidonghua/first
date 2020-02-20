@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="ProToolBlob.WindowToolBlob"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProToolBlob"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="150">
+    <UserControl.Resources>
+        <local:ToolBlob x:Key="toolBlob"></local:ToolBlob>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Border Background="DarkBlue">
+                
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1 " Background="LightGray">
+            <ScrollViewer>
+                <StackPanel>
+                    <Border Background="White"  Height="50" Margin="5">
+                        <WrapPanel>
+                            <Button Margin="15"  FontSize="6">检测范围</Button>
+                        </WrapPanel>
+                    </Border>
+                    <Border Background="White"  Height="50" Margin="5">
+
+                    </Border>
+                    <Border Background="White"  Height="50" Margin="5">
+
+                    </Border>
+                    <Border Background="White"  Height="50" Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock FontSize="6">判定条件</TextBlock>
+                            <TextBlock FontSize="5" Grid.Row="1">.面积</TextBlock>
+                            <WrapPanel Grid.Row="2">
+                                <TextBlock FontSize="5">上限</TextBlock>
+                                <TextBox Text="{Binding Source={StaticResource toolBlob},Path=Max}"></TextBox>
+                            </WrapPanel>
+                            <WrapPanel Grid.Row="3">
+                                <TextBlock FontSize="5">检测值</TextBlock>
+                                <TextBox></TextBox>
+                            </WrapPanel>
+                           <WrapPanel Grid.Row="4">
+                                <TextBlock FontSize="5">下限</TextBlock>
+                                <TextBox Text="{Binding Source={StaticResource toolBlob},Path=Min}"></TextBox>
+                           </WrapPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2" Background="LightGray" >
+            
+        </Grid>
+    </Grid>
+</UserControl>
